@@ -56,7 +56,7 @@
 <script>
     var baseUrl = 'https://node.ihacker.top';
     var sendUrl = baseUrl + '/core/user/sendcode.json';
-    var loginUrl = baseUrl + '/core/user/gotoLogin.json';
+    var loginUrl = baseUrl + '/core/user/apilogin.json';
     $(function () {
         $('input[name="submit"]').click(function () {
             var email = $('input[name="email"]').val();
@@ -64,6 +64,7 @@
             $.post(loginUrl, {email: email, code: code}, function (e) {
                 if (e.code === 0) {
                     $('.msg').html(e.message);
+                    $.cookie('token', e.token, {expires: 7, path: '/', domain: e.domain});
                     setTimeout(function () {
                         window.location.href = baseUrl + '/hackgame/start/index.html';
                     }, 1000);
