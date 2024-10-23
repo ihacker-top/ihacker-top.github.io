@@ -1,10 +1,10 @@
 window.$docsify = {
-    search: {
-        paths: 'auto',
-        placeholder: ' 🔍 开始搜索',
-        noData: '😞 没有结果',
-        depth: 6
-    },
+    // search: {
+    //     paths: 'auto',
+    //     placeholder: ' 🔍 开始搜索',
+    //     noData: '😞 没有结果',
+    //     depth: 6
+    // },
     pagination: {
         previousText: '上一页',
         nextText: '下一页',
