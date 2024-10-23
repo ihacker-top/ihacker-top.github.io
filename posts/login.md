@@ -65,7 +65,7 @@
                 if (e.code === 0) {
                     $('.msg').html(e.message);
                     setTimeout(function () {
-                        window.location.href = baseUrl + '/hackgame/start/index';
+                        // window.location.href = baseUrl + '/hackgame/start/index.html';
                     }, 1000);
                 }else {
                     $('.msg').html(e.message);
