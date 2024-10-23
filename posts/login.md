@@ -66,7 +66,7 @@
                     $('.msg').html(e.message);
                     $.cookie('token', e.token, {expires: 7, path: '/', domain: e.domain});
                     setTimeout(function () {
-                        // window.location.href = baseUrl + '/hackgame/start/index.html';
+                        window.location.href = baseUrl + '/hackgame/start/index.html';
                     }, 1000);
                 }else {
                     $('.msg').html(e.message);
