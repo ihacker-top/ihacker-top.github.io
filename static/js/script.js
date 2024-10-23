@@ -20,8 +20,23 @@ window.$docsify = {
                     '<p>iHacker.top</p>',
                 '</footer>'
             ].join('');
+            hook.init(function () {
+                var token = $.cookie('token');
+                $.post(baseUrl + '/core/user/apiUserInfo', {token: token}, function (e) {
+                    if (e.code === 0) {
+                        $.cookie('email', e.email);
+                        $.cookie('login', 1);
+                    }
+                });
+            });
             hook.afterEach(function(html) {
                 return html + footer;
+            });
+            hook.beforeEach(function(content) {
+                setTimeout(function () {
+                    showNav();
+                }, 100);
+                return content;
             });
         }
     ],
@@ -41,4 +56,23 @@ window.$docsify = {
     auto2top: true,
     mergeNavbar: true,
     executeScript: true,
+}
+var baseUrl = 'https://node.ihacker.top';
+var hgUrl = baseUrl + '/hackgame/start/index';
+function showNav () {
+    var login = $.cookie('login');
+    var email = $.cookie('email');
+    if (parseInt(login) === 1) {
+        $('.app-nav ul').append('<li><a class="hackgame" href="' + hgUrl + '" target="_blank">HackGame</a></li>');
+        $('.app-nav ul').append('<li>' + email +'</li>');
+        $('.app-nav ul').append('<li><a class="logout">退出</a></li>');
+        $('.app-nav .logout').click(function () {
+            $.cookie('token', '');
+            $.cookie('email', '');
+            $.cookie('login', 0);
+            window.location.reload();
+        });
+    }else {
+        $('.app-nav ul').append('<li><a href="/#/login">登录/注册</a></li>');
+    }
 }
