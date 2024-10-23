@@ -64,6 +64,8 @@
                 if (e.code === 0) {
                     $('.msg').html(e.message);
                     $.cookie('login', 1);
+                    $.cookie('email', e.email);
+                    $.cookie('domain', e.domain);
                     $.cookie('token', e.token, {expires: 7, path: '/', domain: e.domain});
                     setTimeout(function () {
                         window.location.href = '/#/index';

@@ -20,15 +20,6 @@ window.$docsify = {
                     '<p>iHacker.top</p>',
                 '</footer>'
             ].join('');
-            hook.init(function () {
-                var token = $.cookie('token');
-                $.post(baseUrl + '/core/user/apiUserInfo.json', {token: token}, function (e) {
-                    if (e.code === 0) {
-                        $.cookie('login', 1);
-                        $.cookie('email', e.email);
-                    }
-                });
-            });
             hook.afterEach(function(html) {
                 return html + footer;
             });
@@ -68,8 +59,9 @@ function showNav () {
         $('.app-nav ul').append('<li><a class="logout">退出</a></li>');
         $('.app-nav .logout').click(function () {
             $.cookie('login', 0);
-            $.removeCookie('token');
-            $.removeCookie('email');
+            $.cookie('email', '');
+            $.cookie('domain', '');
+            $.cookie('token', e.token, {expires: -1, path: '/', domain: e.domain});
             window.location.reload();
         });
     }else {
