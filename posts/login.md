@@ -54,8 +54,7 @@
     </div>
 </div>
 <script>
-    // var baseUrl = 'https://node.ihacker.top';
-    var baseUrl = 'http://localhost:8081/ihacker-node-source/start.php';
+    var baseUrl = 'https://node.ihacker.top';
     var sendUrl = baseUrl + '/core/user/sendcode.json';
     var loginUrl = baseUrl + '/core/user/apilogin.json';
     $(function () {
