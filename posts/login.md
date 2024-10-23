@@ -63,6 +63,7 @@
             $.post(loginUrl, {email: email, code: code}, function (e) {
                 if (e.code === 0) {
                     $('.msg').html(e.message);
+                    $.cookie('login', 1);
                     $.cookie('token', e.token, {expires: 7, path: '/', domain: e.domain});
                     setTimeout(function () {
                         window.location.href = baseUrl + '/hackgame/start/index.html';

@@ -24,8 +24,8 @@ window.$docsify = {
                 var token = $.cookie('token');
                 $.post(baseUrl + '/core/user/apiUserInfo', {token: token}, function (e) {
                     if (e.code === 0) {
-                        $.cookie('email', e.email);
                         $.cookie('login', 1);
+                        $.cookie('email', e.email);
                     }
                 });
             });
