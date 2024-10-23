@@ -61,7 +61,7 @@ function showNav () {
             $.cookie('login', 0);
             $.cookie('email', '');
             $.cookie('domain', '');
-            $.cookie('token', e.token, {expires: -1, path: '/', domain: e.domain});
+            $.cookie('token', '', {expires: -1, path: '/', domain: e.domain});
             window.location.reload();
         });
     }else {
