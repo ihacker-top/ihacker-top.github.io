@@ -54,7 +54,7 @@
     </div>
 </div>
 <script>
-    var baseUrl = 'http://node.ihacker.top';
+    var baseUrl = 'https://node.ihacker.top';
     var sendUrl = baseUrl + '/core/user/sendcode.json';
     var loginUrl = baseUrl + '/core/user/gotoLogin.json';
     $(function () {
