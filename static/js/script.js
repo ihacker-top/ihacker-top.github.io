@@ -67,9 +67,9 @@ function showNav () {
         $('.app-nav ul').append('<li>' + email +'</li>');
         $('.app-nav ul').append('<li><a class="logout">退出</a></li>');
         $('.app-nav .logout').click(function () {
-            $.cookie('token', '');
-            $.cookie('email', '');
             $.cookie('login', 0);
+            $.removeCookie('token');
+            $.removeCookie('email');
             window.location.reload();
         });
     }else {
