@@ -62,14 +62,13 @@
             var code = $('input[name="code"]').val();
             $.post(loginUrl, {email: email, code: code}, function (e) {
                 if (e.code === 0) {
-                    console.log(e);
                     $('.msg').html(e.message);
                     $.cookie('login', 1);
                     $.cookie('email', e.email);
                     $.cookie('domain', e.domain);
                     $.cookie('token', e.token, {expires: 7, path: '/', domain: e.domain});
                     setTimeout(function () {
-                        // window.location.href = '/#/index';
+                        window.location.href = '/#/index';
                     }, 1000);
                 }else {
                     $('.msg').html(e.message);
