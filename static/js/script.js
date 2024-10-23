@@ -22,7 +22,7 @@ window.$docsify = {
             ].join('');
             hook.init(function () {
                 var token = $.cookie('token');
-                $.post(baseUrl + '/core/user/apiUserInfo', {token: token}, function (e) {
+                $.post(baseUrl + '/core/user/apiUserInfo.json', {token: token}, function (e) {
                     if (e.code === 0) {
                         $.cookie('login', 1);
                         $.cookie('email', e.email);
@@ -58,7 +58,7 @@ window.$docsify = {
     executeScript: true,
 }
 var baseUrl = 'https://node.ihacker.top';
-var hgUrl = baseUrl + '/hackgame/start/index';
+var hgUrl = baseUrl + '/hackgame/start/index.html';
 function showNav () {
     var login = $.cookie('login');
     var email = $.cookie('email');
