@@ -53,6 +53,7 @@ var hgUrl = baseUrl + '/hackgame/start/index.html';
 function showNav () {
     var login = $.cookie('login');
     var email = $.cookie('email');
+    var domain = $.cookie('domain');
     if (parseInt(login) === 1) {
         $('.app-nav ul').append('<li><a class="hackgame" href="' + hgUrl + '" target="_blank">HackGame</a></li>');
         $('.app-nav ul').append('<li>' + email +'</li>');
@@ -61,7 +62,7 @@ function showNav () {
             $.cookie('login', 0);
             $.cookie('email', '');
             $.cookie('domain', '');
-            $.cookie('token', '', {expires: -1, path: '/', domain: e.domain});
+            $.cookie('token', '', {expires: -1, path: '/', domain: domain});
             window.location.reload();
         });
     }else {
