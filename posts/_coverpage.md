@@ -2,7 +2,7 @@
 
 **<center><font color="#ff5c5c" size=72><a href="#/index">安全节点</a></font></center>**
 
-Copyright © 2000-2024 **安全节点**
+Copyright © 2024 **安全节点**
 
 [进入](index)
 [动态](content)

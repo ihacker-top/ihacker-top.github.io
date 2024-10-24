@@ -15,7 +15,7 @@ window.$docsify = {
             var footer = [
                 '<hr/>',
                 '<footer>',
-                    '<p>Copyright © 2000-2024 <span style="color: #ff5c5c;"><b>安全节点</b></span> All Rights Reserved.</p>',
+                    '<p>Copyright © 2024 <span style="color: #ff5c5c;"><b>安全节点</b></span> All Rights Reserved.</p>',
                     '<P>安全节点 由 <i><b>S.N.T</b></i> 管理维护 </p>',
                     '<p>iHacker.top</p>',
                 '</footer>'
@@ -49,13 +49,15 @@ window.$docsify = {
     executeScript: true,
 }
 var baseUrl = 'https://node.ihacker.top';
-var hgUrl = baseUrl + '/hackgame/start/index.html';
+// var hgUrl = baseUrl + '#';
+var hgUrl = 'javascript:alert(\'建设中……\');';
 function showNav () {
     var login = $.cookie('login');
     var email = $.cookie('email');
     var domain = $.cookie('domain');
     if (parseInt(login) === 1) {
-        $('.app-nav ul').append('<li><a class="hackgame" href="' + hgUrl + '" target="_blank">HackGame</a></li>');
+        // $('.app-nav ul').append('<li><a class="hackgame" href="' + hgUrl + '" target="_blank">HackGame</a></li>');
+        $('.app-nav ul').append('<li><a class="hackgame" href="' + hgUrl + '">HackGame</a></li>');
         $('.app-nav ul').append('<li>' + email +'</li>');
         $('.app-nav ul').append('<li><a class="logout">退出</a></li>');
         $('.app-nav .logout').click(function () {
